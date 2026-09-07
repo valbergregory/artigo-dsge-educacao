@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# LaTeX intermediários (mantém .tex, .bib, .pdf, .docx, figures/, tables/)
+*.aux
+*.log
+*.out
+*.blg
+*.bbl
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.l1
+*.l2
+*.l3
+*.lb
+*.g1
+*.g2
+*.g3
+*.gb
+compile*.log
+bibtex.log
+
+# Auxiliares de build/descartáveis
+anpec/ref_default.docx
+
+# SO
+Thumbs.db
+.DS_Store

@@ -1,0 +1,251 @@
+\documentclass[12pt,a4paper]{article}
+% =============================================================================
+% PAPER B — Cortes em educação e desigualdade regional no Brasil
+% Painel das 27 UF + projeção regional de um choque fiscal educacional
+% =============================================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{mathptmx}
+\usepackage{geometry}
+\geometry{a4paper,left=1.8cm,right=1.8cm,top=2cm,bottom=2cm}
+\usepackage{setspace}
+\singlespacing
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage[round,authoryear]{natbib}
+\bibliographystyle{plainnat}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\renewcommand{\tablename}{Tabela}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\bibname}{Refer\^encias}
+\captionsetup{font=small,labelfont=bf,justification=centering}
+\newcolumntype{Y}{>{\arraybackslash}X}
+\newcommand{\fonte}[1]{\captionsetup{font=scriptsize}\caption*{\footnotesize Fonte: #1}}
+
+\title{\textbf{Cortes em Educa\c{c}\~ao e Desigualdade Regional no Brasil:}\\[2pt]
+\textbf{\large Evid\^encias em Painel das 27 UF e a Incid\^encia Espacial de um Choque Fiscal Educacional}}
+\author{Valber Gregory Barbosa Costa Bezerra Santos\thanks{Universidade Federal de Alagoas (UFAL) -- Unidade Educacional de Penedo; Tribunal de Justi\c{c}a do Estado de Alagoas. E-mail: \texttt{valber.santos@penedo.ufal.br}. Para avalia\c{c}\~ao \`as cegas, suprimir esta nota.}}
+\date{\today}
+
+\usepackage{xcolor}
+\newcommand{\guia}[1]{\par\smallskip\noindent\fcolorbox{orange!70!black}{orange!8}{%
+\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\footnotesize%
+\textbf{\textcolor{orange!70!black}{$\blacktriangleright$ Orienta\c{c}\~ao (remover na vers\~ao final):}}~#1}}\par\smallskip}
+
+\begin{document}
+\maketitle
+\guia{\textbf{Como usar este documento.} Este \'e um \emph{rascunho-guia}: o texto e as figuras/tabelas s\~ao um ponto de partida gerado a partir do seu c\'odigo. As caixas laranja indicam \emph{o que voc\^e deve escrever ou expandir} em cada se\c{c}\~ao --- a autoria intelectual e a reda\c{c}\~ao final s\~ao suas. Reescreva na sua voz, confira todos os n\'umeros contra a sa\'ida do c\'odigo e \textbf{apague todas as caixas de orienta\c{c}\~ao} antes de submeter. Para remover todas de uma vez, redefina \texttt{$\backslash$renewcommand\{$\backslash$guia\}[1]\{\}} no pre\^ambulo.}
+\vspace{-0.5cm}
+\begin{center}\small
+\textbf{\'Area ANPEC:} 10 -- Economia Regional e Urbana (aderente \`a 12 -- Economia Social).\\
+\textbf{JEL:} I24; I28; J31; R11; R23; H75.
+\end{center}
+
+\begin{abstract}
+\noindent Avalia-se como o gasto p\'ublico em educa\c{c}\~ao afeta os sal\'arios regionais no Brasil e, sobretudo, qual a incid\^encia espacial de um corte. Estima-se um painel log-log das 27 unidades federativas (2010--2022) com efeitos fixos bidirecionais e erros-padr\~ao de Driscoll--Kraay, obtendo-se elasticidade sal\'ario-educa\c{c}\~ao m\'edia de $0{,}17$ (significativa a $1\%$), com forte heterogeneidade: o efeito \'e elevado no Norte e Nordeste ($\approx 0{,}21$) e pr\'oximo de zero no Sudeste. As elasticidades estaduais s\~ao ancoradas por encolhimento emp\'irico-bayesiano em dire\c{c}\~ao \`as regionais. Combinando a resposta salarial agregada de um DSGE fiscal com capital humano com essas elasticidades regionais, projeta-se a incid\^encia distributiva de um corte permanente no gasto educacional. O resultado central \'e que a austeridade educacional \'e \emph{regressiva no espa\c{c}o}: o preju\'izo salarial concentra-se no Norte e Nordeste -- justamente as regi\~oes que mais dependem da oferta p\'ublica de capital humano --, elevando o \'indice de Gini salarial entre estados em at\'e $17{,}7\%$ e a raz\~ao salarial Sudeste/Nordeste de $1{,}65$ a $1{,}82$. Uma decomposi\c{c}\~ao de Theil mostra que a piora concentra-se no componente \emph{entre} regi\~oes, e a desigualdade cresce de forma persistente ao longo de 30 anos.
+
+\vspace{0.2cm}
+\noindent\textbf{Palavras-chave:} gasto p\'ublico em educa\c{c}\~ao; sal\'arios; desigualdade regional; dados em painel; capital humano; multiplicadores regionais.
+\end{abstract}
+\noindent\textbf{Abstract.} We assess how public education spending affects regional wages in Brazil and, above all, the spatial incidence of a cut. A log-log two-way fixed-effects panel of the 27 states (2010--2022) with Driscoll--Kraay standard errors yields an average wage-education elasticity of $0.17$ (significant at $1\%$), largest in the North/Northeast ($\approx 0.21$) and near zero in the Southeast; state elasticities are anchored by empirical-Bayes shrinkage. Combining the aggregate wage response of a fiscal DSGE with human capital with these regional elasticities, we project the distributive incidence of a permanent education cut. Education austerity is \emph{spatially regressive}: wage damage concentrates in the poorest regions, raising the between-state wage Gini by up to $17.7\%$; a Theil decomposition shows the deterioration is a between-region phenomenon, growing persistently over 30 years. \textbf{Keywords:} public education spending; wages; regional inequality; panel data; human capital. \textbf{JEL:} I24; I28; J31; R11; R23; H75.
+
+% =============================================================================
+\section{Introdu\c{c}\~ao}
+\guia{Reescreva na sua voz, come\c{c}ando por um \emph{caso concreto} que voc\^e conhe\c{c}a (ex.: um bloqueio espec\'ifico de repasses a uma universidade/IF, com fonte). Deixe expl\'icitos: (i) a pergunta; (ii) a lacuna na literatura; (iii) sua contribui\c{c}\~ao em 1 frase. Mantenha 2--3 par\'agrafos.}
+% =============================================================================
+A rela\c{c}\~ao entre educa\c{c}\~ao, capital humano e sal\'arios \'e central na economia aplicada \citep{mincer1974,card2001,heckman2006}. No Brasil, essa rela\c{c}\~ao \'e mediada por profundas desigualdades regionais e por distintas capacidades fiscais dos entes subnacionais. Pol\'iticas de conten\c{c}\~ao or\c{c}ament\'aria -- como as induzidas pelo teto de gasto (EC 95/2016) e por bloqueios de repasses a universidades e institutos federais -- s\~ao usualmente avaliadas por seu custo agregado, ignorando que sua incid\^encia pode ser \emph{espacialmente desigual}. A pergunta deste artigo \'e dupla: (i) qual a magnitude e a heterogeneidade da elasticidade sal\'ario-educa\c{c}\~ao entre as unidades federativas; e (ii) qual a incid\^encia regional de um corte no gasto educacional sobre os sal\'arios e a desigualdade.
+
+A contribui\c{c}\~ao \'e tr\'iplice. \emph{Primeiro}, estima-se um painel das 27 UF com efeitos fixos bidirecionais e erros de \citet{driscollkraay1998}, robustos \`a depend\^encia espacial e serial, recuperando uma elasticidade positiva e fortemente heterog\^enea, ancorada por encolhimento emp\'irico-bayesiano \citep{jamesstein1961,efronmorris1975}. \emph{Segundo}, articula-se a evid\^encia regional com a resposta salarial agregada de um DSGE fiscal com capital humano, projetando a incid\^encia espacial de um choque -- na tradi\c{c}\~ao dos multiplicadores fiscais regionais \citep{nakamurasteinsson2014,chodorowreich2019,farhiwerning2017}. \emph{Terceiro}, mede-se o efeito sobre a desigualdade por m\'ultiplos \^angulos (Gini, curva de Lorenz, raz\~ao Sudeste/Nordeste, decomposi\c{c}\~ao de Theil e trajet\'oria temporal), mostrando que o dano \'e regressivo no espa\c{c}o e persistente no tempo.
+
+O achado central \'e que cortes em educa\c{c}\~ao \emph{aprofundam a desigualdade regional}: o preju\'izo salarial recai sobre o Norte e o Nordeste, cuja popula\c{c}\~ao mais depende da oferta p\'ublica de capital humano.
+
+% =============================================================================
+\section{Revis\~ao de literatura}
+\guia{Amplie com 4--6 refer\^encias que voc\^e domina, sobretudo brasileiras (ex.: Cavalcanti \& Vereda, Vereda, Divino, textos do IPEA/BCB sobre multiplicadores fiscais). Para cada bloco, diga em uma frase como SEU modelo se posiciona. Confirme que toda cita\c{c}\~ao tem entrada em \texttt{referencias.bib}.}
+% =============================================================================
+A teoria do capital humano estabelece que educa\c{c}\~ao eleva produtividade e sal\'arios \citep{mincer1974,lucas1988}; \citet{manuelliseshadri2014} enfatizam o canal de qualidade. O papel do gasto p\'ublico \'e formalizado por \citet{glommravikumar1992} e \citet{barro1990}, com evid\^encias em \citet{blankenausimpson2004,blankenau2007}. A dimens\~ao regional \'e iluminada pela literatura de multiplicadores fiscais em uni\~oes monet\'arias \citep{nakamurasteinsson2014,chodorowreich2019,farhiwerning2017}: assim como o multiplicador local depende da estrutura da economia regional, a transmiss\~ao do gasto educacional aos sal\'arios depende da depend\^encia local da oferta p\'ublica de forma\c{c}\~ao. Isso justifica tratar as UF -- que compartilham moeda e pol\'itica monet\'aria -- como regi\~oes de uma uni\~ao, com incid\^encia heterog\^enea. A refer\^encia de calibra\c{c}\~ao do bloco estrutural vem da literatura DSGE brasileira \citep{castro2015samba,cavalcantivereda2015}.
+
+% =============================================================================
+\section{Estrat\'egia emp\'irica e dados}\label{sec:emp}
+\guia{\textbf{Aten\c{c}\~ao (dados):} hoje a base \'e \emph{calibrada}. Quando rodar \texttt{use\_api=TRUE}, descreva exatamente SUA fonte real (RAIS vs.\ PNAD Cont\'inua; tabelas do SIDRA; s\'erie do SGS), o per\'iodo e o tratamento. Discuta endogeneidade e o que far\'a pela causalidade (painel din\^amico, IV, \emph{event study} da EC 95).}
+% =============================================================================
+A especifica\c{c}\~ao principal \'e um modelo log-log com efeitos fixos por UF e por ano:
+\begin{equation}\label{eq:fe}
+\log(\textit{Salario}_{it}) = \beta_1 \log(\textit{GastoEdu}_{it}) + \beta_2 \log(\textit{PIBpc}_{it}) + \mu_i + \lambda_t + \varepsilon_{it},
+\end{equation}
+em que $\beta_1$ \'e a elasticidade sal\'ario-educa\c{c}\~ao. Os efeitos fixos $\mu_i$ controlam caracter\'isticas estaduais invariantes e $\lambda_t$ choques nacionais. A infer\^encia usa erros de \citet{driscollkraay1998}, robustos \`a depend\^encia espacial e serial \citep{pesaran2006}. Para a heterogeneidade, estimam-se elasticidades por estado via \emph{bootstrap} \citep{efrontibshirani1993} de 2.000 replica\c{c}\~oes e por macrorregi\~ao (FE por regi\~ao), \emph{encolhendo}-se as estimativas estaduais em dire\c{c}\~ao \`a regional por um estimador tipo James--Stein:
+\begin{equation}\label{eq:eb}
+\hat{\delta}^{EB}_{i} = w_i\,\hat{\delta}_{i} + (1-w_i)\,\hat{\beta}_{r(i)}, \qquad
+w_i = \frac{\tau^2_{r(i)}}{\tau^2_{r(i)} + \mathrm{Var}(\hat{\delta}_i)}.
+\end{equation}
+
+O painel cobre as 27 UF de 2010 a 2022 (351 observa\c{c}\~oes): sal\'ario m\'edio real, gasto educacional per capita e PIB per capita, deflacionados pelo IPCA. O roteiro coleta s\'eries oficiais (BCB/SGS; SIDRA/IBGE; SICONFI/FINBRA; SIOP); nesta vers\~ao metodol\'ogica emprega-se uma base \emph{calibrada} realista, com a hierarquia regional de renda brasileira (Sudeste/Sul mais ricos; Norte/Nordeste mais pobres) e elasticidade verdadeira heterog\^enea, declarada abertamente. A Tabela~\ref{tab:desc} traz as descritivas e a Figura~\ref{fig:evol}, a evolu\c{c}\~ao temporal.
+
+\begin{table}[H]
+\centering
+\caption{Estat\'isticas descritivas (base calibrada, 27 UF $\times$ 13 anos)}
+\label{tab:desc}
+\small
+\input{tables/descritivas.tex}
+\fonte{Elabora\c{c}\~ao pr\'opria.}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/evolucao_painel.png}
+\caption{Evolu\c{c}\~ao do sal\'ario m\'edio real e do gasto educacional per capita por macrorregi\~ao}
+\label{fig:evol}
+\fonte{Elabora\c{c}\~ao pr\'opria.}
+\end{figure}
+
+% =============================================================================
+\section{Resultados I: elasticidade e heterogeneidade regional}\label{sec:res1}
+\guia{Interprete a heterogeneidade regional: por que a elasticidade \'e maior no Norte/Nordeste? Relacione \`a menor oferta privada de forma\c{c}\~ao e \`a depend\^encia da educa\c{c}\~ao p\'ublica. Comente o encolhimento emp\'irico-bayesiano.}
+% =============================================================================
+A Tabela~\ref{tab:fe} apresenta o modelo. A elasticidade sal\'ario-educa\c{c}\~ao \'e de $\approx 0{,}17$, significativa a $1\%$ com erros clusterizados e de Driscoll--Kraay, e robusta a tend\^encia. A Tabela~\ref{tab:reg} revela forte heterogeneidade: elasticidade elevada no Norte e Nordeste ($\approx 0{,}21$), intermedi\'aria no Centro-Oeste e Sul, e pr\'oxima de zero no Sudeste. A leitura \'e que, onde h\'a maior oferta privada de forma\c{c}\~ao (Sudeste), o gasto p\'ublico marginal transmite-se menos aos sal\'arios; no Norte e Nordeste, onde a educa\c{c}\~ao p\'ublica \'e determinante, o efeito \'e maior. As Figuras~\ref{fig:disp} e~\ref{fig:eb} ilustram a rela\c{c}\~ao e o encolhimento emp\'irico-bayesiano das elasticidades estaduais.
+
+\begin{table}[H]
+\centering
+\caption{Modelo de efeitos fixos -- dependente: $\log$(sal\'ario m\'edio)}
+\label{tab:fe}
+\small
+\input{tables/modelo_fe.tex}
+\begin{minipage}{0.95\textwidth}\vspace{2pt}\scriptsize
+Nota: erros entre par\^enteses. \textsuperscript{*}$p<0{,}10$; \textsuperscript{**}$p<0{,}05$; \textsuperscript{***}$p<0{,}01$. (1) \emph{pooled}; (2) FE clusterizado; (3) FE Driscoll--Kraay; (4) FE com tend\^encia.
+\end{minipage}
+\fonte{Elabora\c{c}\~ao pr\'opria.}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Elasticidade sal\'ario-educa\c{c}\~ao por macrorregi\~ao}
+\label{tab:reg}
+\small
+\input{tables/region_elast.tex}
+\fonte{Elabora\c{c}\~ao pr\'opria.}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.49\textwidth}\centering
+\includegraphics[width=\textwidth]{figures/elasticidade_uf_ic.png}
+\end{minipage}\hfill
+\begin{minipage}{0.49\textwidth}\centering
+\includegraphics[width=\textwidth]{figures/encolhimento_eb.png}
+\end{minipage}
+\caption{Elasticidades estaduais com IC \emph{bootstrap} de $95\%$ (esq.) e encolhimento emp\'irico-bayesiano (dir.)}
+\label{fig:eb}
+\fonte{Elabora\c{c}\~ao pr\'opria.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/dispersao_uf.png}
+\caption{Rela\c{c}\~ao sal\'ario-educa\c{c}\~ao por macrorregi\~ao}
+\label{fig:disp}
+\fonte{Elabora\c{c}\~ao pr\'opria.}
+\end{figure}
+
+% =============================================================================
+\section{Resultados II: incid\^encia regional do corte}\label{sec:res2}
+\guia{Explique a l\'ogica de combinar a resposta salarial \emph{agregada} do DSGE com as elasticidades \emph{regionais}. Discuta a hip\'otese de que a incid\^encia \'e proporcional \`a elasticidade local, e como o encolhimento evita ganhos esp\'urios. Conecte aos multiplicadores fiscais regionais.}
+% =============================================================================
+Para projetar a incid\^encia espacial, combina-se a resposta salarial agregada de um DSGE fiscal com capital humano -- em que o gasto p\'ublico em educa\c{c}\~ao \'e insumo produtivo da acumula\c{c}\~ao de capital humano ($H_{t+1}=(1-\delta_h)H_t + A(G^e_t)^\phi$) -- com as elasticidades regionais encolhidas. A perda salarial de longo prazo do estado $i$ \'e a resposta agregada escalada por $\hat{\delta}^{EB}_i/\overline{\delta}^{EB}$. A Figura~\ref{fig:proj} e o mapa de calor da Figura~\ref{fig:mapa} mostram que o preju\'izo concentra-se no Nordeste e no Norte (Alagoas, Pernambuco, Rio Grande do Norte, Para\'iba, Maranh\~ao lideram), enquanto o Sudeste -- de elasticidade pr\'oxima de zero -- \'e quase imune. A Tabela~\ref{tab:proj} lista os estados mais afetados.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.56\textwidth}\centering
+\includegraphics[width=\textwidth]{figures/projecao_regional.png}
+\end{minipage}\hfill
+\begin{minipage}{0.42\textwidth}\centering
+\includegraphics[width=\textwidth]{figures/lorenz.png}
+\end{minipage}
+\caption{Perda salarial por UF do corte de $1\%$ (esq.) e curva de Lorenz antes/depois do corte de $25\%$ (dir.)}
+\label{fig:proj}
+\fonte{Elabora\c{c}\~ao pr\'opria.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/mapa_calor_uf.png}
+\caption{Intensidade do preju\'izo salarial por UF}
+\label{fig:mapa}
+\fonte{Elabora\c{c}\~ao pr\'opria.}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Estados com maior perda salarial projetada (12 maiores)}
+\label{tab:proj}
+\small
+\input{tables/projecao_regional.tex}
+\fonte{Elabora\c{c}\~ao pr\'opria.}
+\end{table}
+
+% =============================================================================
+\section{Resultados III: o corte aprofunda a desigualdade regional}\label{sec:res3}
+\guia{\textbf{Se\c{c}\~ao central do paper.} Interprete o aumento do Gini e a decomposi\c{c}\~ao de Theil (a piora \'e \emph{entre} regi\~oes) e a persist\^encia temporal. Argumente por que isso caracteriza a austeridade educacional como regressiva no espa\c{c}o.}
+% =============================================================================
+Como o choque recai sobre as regi\~oes mais pobres, a desigualdade salarial \emph{entre} estados aumenta. A Figura~\ref{fig:gini} e a Tabela~\ref{tab:desig} mostram que o Gini salarial entre UF sobe de forma mon\'otona com a magnitude do corte ($+0{,}5\%$ para $1\%$; $+6{,}1\%$ para $10\%$; $+17{,}7\%$ para $25\%$), e a raz\~ao Sudeste/Nordeste amplia-se de $1{,}65$ a $1{,}82$. A curva de Lorenz (Figura~\ref{fig:proj}, dir.) afasta-se da diagonal.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/desigualdade_gini.png}
+\caption{Desigualdade regional antes/depois do corte: Gini entre UF (esq.) e raz\~ao SE/NE (dir.)}
+\label{fig:gini}
+\fonte{Elabora\c{c}\~ao pr\'opria.}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Desigualdade regional por magnitude do corte}
+\label{tab:desig}
+\small
+\input{tables/desigualdade.tex}
+\fonte{Elabora\c{c}\~ao pr\'opria. Gini e raz\~ao ponderados pela popula\c{c}\~ao (Censo 2022).}
+\end{table}
+
+Dois aprofundamentos refor\c{c}am o resultado. \emph{Primeiro}, a decomposi\c{c}\~ao de Theil (Tabela~\ref{tab:theil}) mostra que a piora concentra-se quase integralmente no componente \emph{entre} regi\~oes (o componente \emph{dentro} das regi\~oes praticamente n\~ao se altera): trata-se de um fen\^omeno genuinamente regional, n\~ao de dispers\~ao intrarregional. \emph{Segundo}, a Figura~\ref{fig:ginitraj} mostra que a desigualdade n\~ao \'e um efeito de impacto, mas cresce de forma \emph{persistente} ao longo de 30 anos, \`a medida que o menor capital humano se propaga aos sal\'arios das regi\~oes dependentes.
+
+\begin{table}[H]
+\centering
+\caption{Decomposi\c{c}\~ao de Theil da desigualdade salarial entre UF}
+\label{tab:theil}
+\small
+\input{tables/theil_decomp.tex}
+\fonte{Elabora\c{c}\~ao pr\'opria. Decomposi\c{c}\~ao entre e dentro de macrorregi\~oes.}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{figures/gini_trajetoria.png}
+\caption{Trajet\'oria temporal do Gini salarial entre UF ap\'os o corte}
+\label{fig:ginitraj}
+\fonte{Elabora\c{c}\~ao pr\'opria.}
+\end{figure}
+
+% =============================================================================
+\section{Discuss\~ao e conclus\~ao}
+\guia{Interprete a decomposi\c{c}\~ao de Theil e a trajet\'oria do Gini na sua voz, conecte \`a literatura de desigualdade regional brasileira (ex.: Silveira Neto \& Azzoni; Barros; Menezes-Filho) e explicite as implica\c{c}\~oes de pol\'itica e a agenda de identifica\c{c}\~ao causal.}
+% =============================================================================
+A evid\^encia articula tr\^es camadas coerentes: a elasticidade sal\'ario-educa\c{c}\~ao \'e positiva e maior nas regi\~oes mais pobres; o preju\'izo de um corte concentra-se nessas regi\~oes; e a desigualdade regional aumenta de forma persistente, sobretudo no componente entre regi\~oes. A implica\c{c}\~ao de pol\'itica \'e que regras fiscais uniformes -- tetos de gasto que comprimem despesas educacionais -- t\^em efeitos \emph{n\~ao} uniformes: penalizam desproporcionalmente as regi\~oes mais vulner\'aveis, num \emph{feedback} perverso em que regi\~oes pobres, com menor base tribut\'aria, sofrem maior perda salarial e comprometem sua capacidade futura de financiar a pr\'opria educa\c{c}\~ao.
+
+As limita\c{c}\~oes s\~ao a natureza calibrada da base e a identifica\c{c}\~ao apenas condicional do painel; a vers\~ao definitiva requer microdados (RAIS, PNAD Cont\'inua), s\'eries oficiais (SICONFI, SIOP, SIDRA) e desenhos de identifica\c{c}\~ao causal (pain\'eis din\^amicos, IV, \emph{event study} em torno da EC 95), al\'em de modelos com depend\^encia espacial expl\'icita. Conclui-se que a austeridade educacional \'e economicamente custosa e \emph{regressiva no espa\c{c}o}: cortar educa\c{c}\~ao aprofunda a desigualdade regional brasileira.
+
+\section*{Declara\c{c}\~ao sobre uso de IA generativa}
+Este documento foi organizado e redigido com aux\'ilio de IA generativa a partir de c\'odigo, modelos e instru\c{c}\~oes do autor; a concep\c{c}\~ao, a valida\c{c}\~ao e a responsabilidade cient\'ifica s\~ao integralmente do autor.
+
+\section*{Disponibilidade de dados e c\'odigo}
+\guia{\textbf{Preencha:} substitua \texttt{SEU-USUARIO} pelo seu usu\'ario do GitHub e \texttt{XXXXXXX} pelo DOI do Zenodo. Recomenda\c{c}\~ao: publique o reposit\'orio no GitHub, conecte-o ao Zenodo (que gera um DOI a cada \emph{release}) e cite esse DOI. Muitos peri\'odicos exigem esta se\c{c}\~ao (\emph{Data Availability Statement}).}
+Todo o material para reprodu\c{c}\~ao -- base de dados, c\'odigo-fonte (Python e R), figuras e tabelas -- est\'a dispon\'ivel publicamente no reposit\'orio do projeto: \url{https://github.com/valbergregory/artigo-dsge-educacao} (vers\~ao arquivada com DOI no Zenodo: \texttt{10.5281/zenodo.XXXXXXX}). O reposit\'orio cont\'em \texttt{code/} (scripts \texttt{01}--\texttt{05} em Python e portes \texttt{03}--\texttt{04} em R para o RStudio, incluindo o bloco de coleta oficial ativ\'avel por \texttt{use\_api = TRUE}), \texttt{paper/} (fontes LaTeX, figuras e tabelas) e \texttt{run\_all.py} (pipeline completo). As s\'eries oficiais previstas s\~ao: IPCA (Banco Central/SGS, deflator), PIB e rendimento estadual (SIDRA/IBGE), finan\c{c}as estaduais (SICONFI/FINBRA) e gasto federal em educa\c{c}\~ao (SIOP/Tesouro); todos os valores s\~ao deflacionados pelo IPCA. C\'odigo sob licen\c{c}a MIT; texto sob CC-BY 4.0.
+
+\bibliography{referencias}
+\end{document}
