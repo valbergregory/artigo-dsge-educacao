@@ -54,7 +54,6 @@
 \maketitle
 \begin{center}\small\textit{(Vers\~ao para avalia\c{c}\~ao \`as cegas --- identifica\c{c}\~ao de autoria omitida.)}\end{center}
 
-\vspace{-0.6cm}
 \begin{center}
 \small \textbf{\'Area ANPEC sugerida:} 5 -- Economia do Setor P\'ublico (aderente tamb\'em \`as \'Areas 4 -- Macroeconomia e 10 -- Economia Regional e Urbana). \\
 \textbf{Classifica\c{c}\~ao JEL:} E62; H52; I28; J31; O15; R11; C23.
@@ -62,65 +61,47 @@
 
 % ------------------------------- RESUMO --------------------------------------
 \begin{abstract}
-\noindent Avalia-se o impacto do gasto p\'ublico em educa\c{c}\~ao sobre sal\'arios m\'edios estaduais e sobre a din\^amica fiscal no Brasil, combinando econometria de painel e um modelo din\^amico estoc\'astico de equil\'ibrio geral (DSGE) fiscal com capital humano. No bloco emp\'irico, estima-se um painel log-log das 27 unidades federativas (2010--2022) com efeitos fixos bidirecionais e erros-padr\~ao robustos \`a depend\^encia espacial e serial (Driscoll--Kraay), obtendo-se elasticidade sal\'ario-educa\c{c}\~ao m\'edia de $0{,}17$ (significativa a $1\%$), com forte heterogeneidade regional: o efeito \'e maior no Norte e Nordeste ($\approx 0{,}21$) e pr\'oximo de zero no Sudeste. No bloco te\'orico, desenvolve-se um DSGE neocl\'assico com capital f\'isico e humano, tributa\c{c}\~ao distorciva e gasto p\'ublico em educa\c{c}\~ao como insumo produtivo na acumula\c{c}\~ao de capital humano, resolvido por previs\~ao perfeita n\~ao linear com estado estacion\'ario terminal end\'ogeno. Simulam-se cortes permanentes de $1\%$, $5\%$, $10\%$ e $25\%$ e um cen\'ario de \emph{teto de gasto} (EC 95/2016). Os resultados s\~ao contundentes: um corte permanente de $10\%$ reduz o capital humano de longo prazo em $3{,}1\%$ e o produto em $3{,}4\%$; \emph{corr\'oi a pr\'opria base tribut\'aria}, de modo que, em valor presente de 30 anos, $78\%$ da economia or\c{c}ament\'aria \'e revertida pela perda de arrecada\c{c}\~ao (um \emph{efeito Laffer din\^amico da educa\c{c}\~ao}, com \emph{break-even} no ano~$33$); e imp\~oe perdas de bem-estar de at\'e $2{,}4\%$ do consumo permanente. O multiplicador acumulado do gasto educacional sobre o produto supera a unidade ($\approx 1{,}2$). Articulando as fun\c{c}\~oes impulso-resposta com as elasticidades regionais, projeta-se que o preju\'izo salarial concentra-se no Norte e Nordeste, elevando o \'indice de Gini salarial entre estados em at\'e $17{,}7\%$ e ampliando a raz\~ao salarial Sudeste/Nordeste. O resultado central \'e que a austeridade educacional reduz produto e base fiscal e \emph{aprofunda a desigualdade regional} brasileira.
-
-\vspace{0.2cm}
-\noindent \textbf{Palavras-chave:} gasto p\'ublico em educa\c{c}\~ao; capital humano; sal\'arios; DSGE fiscal; dados em painel; desigualdade regional; multiplicadores fiscais.
+% AUTHOR WRITES
 \end{abstract}
 
 \begin{center}\rule{0.6\textwidth}{0.3pt}\end{center}
-\noindent\textbf{Abstract.} This paper assesses the impact of public education spending on regional wages and fiscal dynamics in Brazil, combining panel econometrics with a fiscal DSGE model with human capital. A log-log two-way fixed-effects panel of the 27 Brazilian states (2010--2022) with Driscoll--Kraay standard errors yields an average wage-education elasticity of $0.17$ (significant at $1\%$), largest in the North and Northeast and near zero in the Southeast. A neoclassical DSGE with physical and human capital, distortionary taxation and public education spending as a productive input into human-capital accumulation is solved by nonlinear perfect foresight with an endogenous terminal steady state. Permanent cuts of $1$--$25\%$ and a spending-ceiling scenario (EC 95/2016) are simulated. A permanent $10\%$ cut lowers long-run human capital by $3.1\%$ and output by $3.4\%$, erodes the tax base so that $78\%$ of the budget saving is undone by lost revenue in 30-year present value (a \emph{dynamic education Laffer effect}), and generates welfare losses up to $2.4\%$ of permanent consumption. The cumulative output multiplier of education spending exceeds one. Combining impulse responses with regional elasticities, projected wage damage concentrates in the poorest regions, raising the between-state wage Gini by up to $17.7\%$: education austerity \emph{widens regional inequality}. \textbf{Keywords:} public education spending; human capital; wages; fiscal DSGE; panel data; regional inequality; fiscal multipliers. \textbf{JEL:} E62; H52; I28; J31; O15; R11; C23.
+% AUTHOR WRITES: Abstract
 
 % =============================================================================
 \section{Introdu\c{c}\~ao}
+% AUTHOR WRITES
 % =============================================================================
-A rela\c{c}\~ao entre investimento em educa\c{c}\~ao, forma\c{c}\~ao de capital humano e desempenho econ\^omico \'e um dos temas centrais da economia aplicada. Na tradi\c{c}\~ao da teoria do capital humano, escolaridade e qualifica\c{c}\~ao elevam a produtividade, influenciam a trajet\'oria salarial e geram efeitos agregados sobre crescimento, arrecada\c{c}\~ao e desenvolvimento regional \citep{mincer1974,lucas1988,uzawa1965,manuelliseshadri2014}. No Brasil, a discuss\~ao ganha complexidade adicional em fun\c{c}\~ao das desigualdades hist\'oricas entre unidades federativas, da heterogeneidade produtiva e das distintas capacidades fiscais dos governos subnacionais.
-
-O tema tornou-se ainda mais premente ap\'os a institui\c{c}\~ao do Novo Regime Fiscal (Emenda Constitucional n.\ 95/2016), que limitou o crescimento real do gasto p\'ublico prim\'ario e pressionou despesas discricion\'arias, entre elas as de educa\c{c}\~ao \citep{rocha2017teto}. Epis\'odios recentes de conten\c{c}\~ao ou bloqueio de repasses \`as universidades e institutos federais tornaram concreta a quest\~ao: quais s\~ao os efeitos din\^amicos e regionalmente desiguais de \emph{desinvestir} em educa\c{c}\~ao superior? Pol\'iticas de conten\c{c}\~ao or\c{c}ament\'aria s\~ao frequentemente avaliadas apenas pelo seu custo fiscal imediato, ignorando os efeitos din\^amicos sobre produtividade, sal\'arios e a pr\'opria base de arrecada\c{c}\~ao. Este artigo prop\~oe um arcabou\c{c}o integrado para mensurar esses efeitos.
-
-A contribui\c{c}\~ao \'e qu\'adrupla. \emph{Primeiro}, estima-se um painel das 27 unidades federativas com efeitos fixos bidirecionais e erros-padr\~ao de \citet{driscollkraay1998}, robustos \`a depend\^encia espacial e serial, recuperando uma elasticidade sal\'ario-educa\c{c}\~ao positiva, significativa e regionalmente heterog\^enea, ancorada por encolhimento emp\'irico-bayesiano. \emph{Segundo}, desenvolve-se um DSGE fiscal com capital humano em que o gasto p\'ublico em educa\c{c}\~ao \'e insumo produtivo da acumula\c{c}\~ao de capital humano \citep{uzawa1965,lucas1988,glommravikumar1992,barro1990}, incorporando o bloco fiscal com tributa\c{c}\~ao distorciva da gera\c{c}\~ao moderna de DSGE fiscais \citep{leeper2010,drautzburguhlig2015}. \emph{Terceiro}, quantificam-se m\'ultiplos impactos at\'e aqui pouco explorados de forma integrada: (i) uma escala de cortes ($1$--$25\%$) e um cen\'ario de teto de gasto; (ii) o \emph{custo fiscal l\'iquido} em R\$ bilh\~oes, revelando um \emph{efeito Laffer din\^amico da educa\c{c}\~ao}; (iii) o multiplicador do gasto educacional; e (iv) o custo de bem-estar em equivalente de consumo. \emph{Quarto}, articula-se a evid\^encia macro e regional para medir a incid\^encia distributiva do choque sobre a desigualdade salarial entre estados (Gini, curva de Lorenz e raz\~ao Sudeste/Nordeste), dialogando com a literatura de multiplicadores fiscais regionais \citep{nakamurasteinsson2014,chodorowreich2019,farhiwerning2017}.
-
-A pergunta central \'e tripla: (i) qual a magnitude e a dire\c{c}\~ao da associa\c{c}\~ao entre gasto educacional per capita e sal\'arios m\'edios nas unidades federativas; (ii) quais os efeitos din\^amicos, fiscais e de bem-estar de cortes de diferentes magnitudes no gasto p\'ublico em educa\c{c}\~ao; e (iii) qual a incid\^encia regional desses cortes sobre a desigualdade. As hip\'oteses operacionais s\~ao: \textbf{H1} -- maior gasto educacional per capita associa-se a maiores sal\'arios; \textbf{H2} -- a elasticidade \'e heterog\^enea, maior onde h\'a menor oferta privada de capital humano; \textbf{H3} -- cortes reduzem produto, investimento, sal\'arios, consumo e arrecada\c{c}\~ao, com preju\'izo regionalmente concentrado nas \'areas mais pobres, ampliando a desigualdade; \textbf{H4} -- a queda de arrecada\c{c}\~ao induzida pelo corte reverte parcela substancial da economia or\c{c}ament\'aria inicial.
-
-O principal achado substantivo \'e que pol\'iticas educacionais n\~ao devem ser avaliadas apenas pelo custo or\c{c}ament\'ario imediato: cortes em educa\c{c}\~ao reduzem o produto potencial, corroem a base fiscal e \emph{ampliam a desigualdade regional}.
 
 % =============================================================================
 \section{Revis\~ao de literatura}
+% AUTHOR WRITES
 % =============================================================================
 \subsection{Capital humano, educa\c{c}\~ao p\'ublica e crescimento}
-A teoria do capital humano \citep{mincer1974,card2001,heckman2006} estabelece que educa\c{c}\~ao eleva produtividade e sal\'arios. Em modelos de crescimento end\'ogeno, a acumula\c{c}\~ao de capital humano \'e motor de crescimento sustentado \citep{uzawa1965,lucas1988}. O papel espec\'ifico do \emph{gasto p\'ublico} em educa\c{c}\~ao \'e formalizado por \citet{glommravikumar1992} e por \citet{barro1990}, que insere servi\c{c}os p\'ublicos produtivos na fun\c{c}\~ao de produ\c{c}\~ao. Evid\^encias de \citet{blankenausimpson2004} e \citet{blankenau2007} mostram efeito positivo do gasto p\'ublico em educa\c{c}\~ao sobre o crescimento, condicionado \`a forma de financiamento. \citet{manuelliseshadri2014} demonstram que diferen\c{c}as de qualidade do capital humano explicam grande parte das diferen\c{c}as de renda entre pa\'ises.
+% AUTHOR WRITES
 
 \subsection{Da RBC ao DSGE fiscal}
-A modelagem DSGE evoluiu dos modelos de ciclos reais \citep{kydlandprescott1982}, incorporou rigidezes \citep{cee2005} e consolidou-se na vers\~ao novo-keynesiana estimada \citep{smetswouters2007}. Os m\'etodos de solu\c{c}\~ao s\~ao sistematizados por \citet{schmittgrohe2004} e \citet{fvrr2016}, e operacionalizados em plataformas como o Dynare \citep{adjemian2011}. Blocos fiscais detalhados s\~ao tratados por \citet{galilv2007}, \citet{leeper2010} e \citet{drautzburguhlig2015}. A literatura de capital p\'ublico produtivo \citep{aschauer1989,bomligthart2014,leducwilson2013} fornece a base emp\'irica para calibrar o canal de gasto produtivo. O presente modelo substitui o capital p\'ublico f\'isico pelo \emph{capital humano financiado publicamente}, fechando a ponte entre modelos de educa\c{c}\~ao e crescimento e os DSGE fiscais modernos.
+% AUTHOR WRITES
 
 \subsection{Multiplicadores fiscais regionais e DSGE brasileiro}
-A dimens\~ao regional do choque fiscal \'e iluminada pela literatura de multiplicadores em uni\~oes monet\'arias \citep{nakamurasteinsson2014,chodorowreich2019,farhiwerning2017}, que justifica tratar as UF -- que compartilham moeda e pol\'itica monet\'aria -- como regi\~oes de uma uni\~ao com incid\^encia heterog\^enea. A literatura nacional -- o modelo SAMBA \citep{castro2015samba} e os DSGE fiscais de \citet{vereda2010} e \citet{cavalcantivereda2015} -- fornece ordens de grandeza para a calibra\c{c}\~ao brasileira.
+% AUTHOR WRITES
 
 % =============================================================================
 \section{Estrat\'egia emp\'irica}\label{sec:empirica}
+% AUTHOR WRITES
 % =============================================================================
 \subsection{Modelo de efeitos fixos bidirecionais}
-A especifica\c{c}\~ao principal \'e um modelo log-log com efeitos fixos por UF e por ano:
-\begin{equation}\label{eq:fe}
-\log(\textit{Salario}_{it}) = \beta_1 \log(\textit{GastoEdu}_{it}) + \beta_2 \log(\textit{PIBpc}_{it}) + \mu_i + \lambda_t + \varepsilon_{it},
-\end{equation}
-em que $\beta_1$ \'e a elasticidade sal\'ario-educa\c{c}\~ao. Os efeitos fixos $\mu_i$ controlam caracter\'isticas estaduais invariantes no tempo e $\lambda_t$ capta choques nacionais comuns. A infer\^encia emprega erros-padr\~ao de \citet{driscollkraay1998}, robustos \`a heterocedasticidade, autocorrela\c{c}\~ao e depend\^encia espacial \citep{pesaran2006}; reportam-se tamb\'em erros clusterizados por UF e a estimativa \emph{pooled} para compara\c{c}\~ao. A op\c{c}\~ao por efeitos fixos, robusta a qualquer correla\c{c}\~ao entre efeitos individuais e regressores, \'e disciplinada pelo teste de \citet{hausman1978}.
+% AUTHOR WRITES
 
 \subsection{Endogeneidade e din\^amica}
-A equa\c{c}\~ao~\eqref{eq:fe} identifica associa\c{c}\~oes condicionais, n\~ao necessariamente causais. O gasto educacional pode ser end\'ogeno e operar com defasagens. A agenda de identifica\c{c}\~ao (Se\c{c}\~ao~\ref{sec:agenda}) discute pain\'eis din\^amicos GMM \citep{arellanobond1991}, defasagens distribu\'idas e vari\'aveis instrumentais; o canal causal \'e disciplinado pelo modelo te\'orico da Se\c{c}\~ao~\ref{sec:dsge}.
+% AUTHOR WRITES
 
 \subsection{Heterogeneidade regional e encolhimento}
-Estimam-se elasticidades por estado via regress\~oes individuais com \emph{bootstrap} \citep{efrontibshirani1993} de 2.000 replica\c{c}\~oes. Como cada estado disp\~oe de apenas 13 anos, essas estimativas s\~ao ruidosas. Estimam-se, ent\~ao, elasticidades por macrorregi\~ao (cinco regress\~oes FE) e \emph{encolhem-se} as estimativas estaduais em dire\c{c}\~ao \`a elasticidade da pr\'opria regi\~ao, por um estimador emp\'irico-bayesiano tipo James--Stein \citep{jamesstein1961,efronmorris1975}:
-\begin{equation}\label{eq:eb}
-\hat{\delta}^{EB}_{i} = w_i\,\hat{\delta}_{i} + (1-w_i)\,\hat{\beta}_{r(i)}, \qquad
-w_i = \frac{\tau^2_{r(i)}}{\tau^2_{r(i)} + \mathrm{Var}(\hat{\delta}_i)},
-\end{equation}
-em que $\hat{\beta}_{r(i)}$ \'e a elasticidade da macrorregi\~ao $r$ do estado $i$ e $\tau^2_{r}$ \'e a vari\^ancia entre estados dentro da regi\~ao, l\'iquida do ru\'ido amostral. O procedimento ancora a heterogeneidade estadual em estimativas regionais cr\'iveis (Figura~\ref{fig:eb}).
+% AUTHOR WRITES
 
 % =============================================================================
 \section{Dados e vari\'aveis}\label{sec:dados}
+% AUTHOR WRITES
 % =============================================================================
-O painel cobre as 27 unidades federativas de 2010 a 2022 (351 observa\c{c}\~oes). As vari\'aveis s\~ao sal\'ario m\'edio real, gasto p\'ublico em educa\c{c}\~ao per capita e PIB per capita, deflacionados pelo IPCA. O roteiro computacional foi estruturado para coletar s\'eries oficiais (infla\c{c}\~ao pelo Banco Central via SGS; dados regionais pelo SIDRA/IBGE; finan\c{c}as p\'ublicas pelo Tesouro Nacional via FINBRA/SICONFI e gasto federal via SIOP). Nesta vers\~ao metodol\'ogica, com a coleta autom\'atica desativada, emprega-se uma base \emph{calibrada} de forma realista, em que a elasticidade verdadeira \'e positiva e heterog\^enea e o padr\~ao regional de renda reproduz a hierarquia brasileira (Sudeste/Sul mais ricos; Norte/Nordeste mais pobres). A natureza calibrada \'e declarada abertamente: os valores validam o fluxo anal\'itico e a ordem de grandeza dos efeitos; a vers\~ao emp\'irica definitiva requer microdados (RAIS, PNAD Cont\'inua) e s\'eries oficiais consolidadas (Se\c{c}\~ao~\ref{sec:agenda}). A Tabela~\ref{tab:desc} traz as descritivas; a Tabela~\ref{tab:corr}, as correla\c{c}\~oes; a Figura~\ref{fig:evol}, a evolu\c{c}\~ao temporal por macrorregi\~ao.
 
 \begin{table}[H]
 \centering
@@ -150,9 +131,10 @@ O painel cobre as 27 unidades federativas de 2010 a 2022 (351 observa\c{c}\~oes)
 
 % =============================================================================
 \section{Resultados emp\'iricos}\label{sec:resultados-emp}
+% AUTHOR WRITES
 % =============================================================================
 \subsection{Elasticidade m\'edia}
-A Tabela~\ref{tab:fe} apresenta o modelo. A elasticidade sal\'ario-educa\c{c}\~ao \'e de $\approx 0{,}17$, significativa a $1\%$ tanto com erros clusterizados quanto de Driscoll--Kraay, e robusta \`a substitui\c{c}\~ao dos efeitos de ano por tend\^encia. Um aumento de $10\%$ no gasto educacional per capita associa-se a $\approx 1{,}7\%$ de eleva\c{c}\~ao no sal\'ario m\'edio, condicional ao PIB per capita e aos efeitos fixos. A estimativa \emph{pooled}, vies\'avel por ignorar a heterogeneidade estadual, difere da de efeitos fixos, e o teste de Hausman favorece a especifica\c{c}\~ao de efeitos fixos.
+% AUTHOR WRITES
 
 \begin{table}[H]
 \centering
@@ -167,7 +149,7 @@ Nota: erros-padr\~ao entre par\^enteses. \textsuperscript{*}$p<0{,}10$; \textsup
 \end{table}
 
 \subsection{Heterogeneidade regional e encolhimento}
-A Tabela~\ref{tab:regiao} revela forte heterogeneidade: elasticidade elevada no Norte e Nordeste ($\approx 0{,}21$), intermedi\'aria no Centro-Oeste e Sul, e pr\'oxima de zero no Sudeste. Em regi\~oes com mercado de trabalho mais desenvolvido e maior oferta privada de forma\c{c}\~ao (Sudeste), o gasto p\'ublico marginal transmite-se menos aos sal\'arios; no Norte e Nordeste -- onde a educa\c{c}\~ao p\'ublica responde por parcela maior da forma\c{c}\~ao de capital humano -- o gasto \'e mais determinante. Isso confirma \textbf{H2} e antecipa o resultado distributivo: cortes incidem com mais for\c{c}a onde a popula\c{c}\~ao \'e mais vulner\'avel. A Figura~\ref{fig:eb} mostra o encolhimento emp\'irico-bayesiano das elasticidades estaduais em dire\c{c}\~ao \`as regionais.
+% AUTHOR WRITES
 
 \begin{table}[H]
 \centering
@@ -202,26 +184,13 @@ Nota: cada linha \'e uma regress\~ao FE separada, com erros clusterizados. \text
 \fonte{Elabora\c{c}\~ao pr\'opria a partir de 2.000 reamostragens.}
 \end{figure}
 
-
-
 % =============================================================================
 \section{O modelo DSGE fiscal com capital humano}\label{sec:dsge}
+% AUTHOR WRITES
 % =============================================================================
-Desenvolve-se um DSGE em que o gasto p\'ublico em educa\c{c}\~ao \'e insumo produtivo da acumula\c{c}\~ao de capital humano, combinando a estrutura de dois ativos de \citet{uzawa1965} e \citet{lucas1988}, o financiamento p\'ublico de \citet{glommravikumar1992} e o bloco fiscal de \citet{leeper2010} e \citet{drautzburguhlig2015}.
 
 \subsection{Fam\'ilias, firmas e capital humano}
-Uma fam\'ilia representativa maximiza $\Ee_0 \sum_{t=0}^{\infty} \beta^t [\ln C_t + \theta \ln(1 - L_t)]$ sujeita a
-$C_t + K_{t+1} - (1-\delta_k)K_t = (1-\tau)(w_t H_t L_t + r_t K_t) + \mathit{Tr}_t$,
-gerando a equa\c{c}\~ao de Euler e a oferta de trabalho:
-\begin{align}
-\tfrac{1}{C_t} &= \beta\,\Ee_t\!\left[\tfrac{1}{C_{t+1}}\big((1-\tau)\,r_{t+1} + 1 - \delta_k\big)\right], \label{eq:euler}\\[2pt]
-\tfrac{\theta}{1-L_t} &= \tfrac{1}{C_t}(1-\tau)\,w_t H_t. \label{eq:labor}
-\end{align}
-A produ\c{c}\~ao \'e $Y_t = K_t^{\alpha}(H_t L_t)^{1-\alpha}$, com $r_t = \alpha Y_t/K_t$ e $w_t = (1-\alpha)Y_t/(H_tL_t)$. A remunera\c{c}\~ao por trabalhador -- an\'aloga ao ``sal\'ario m\'edio'' emp\'irico -- \'e $S_t \equiv w_t H_t = (1-\alpha)Y_t/L_t$. O ingrediente central \'e a lei de movimento do capital humano com retornos decrescentes ao gasto:
-\begin{equation}\label{eq:lomh}
-H_{t+1} = (1-\delta_h)H_t + A\,(G^e_t)^{\phi}, \qquad 0<\phi<1,
-\end{equation}
-em que $\phi$ \'e a elasticidade de longo prazo do capital humano ao gasto p\'ublico. O governo opera com or\c{c}amento equilibrado, $\tau Y_t = G^e_t + \mathit{Tr}_t$, com arrecada\c{c}\~ao $T_t \equiv \tau Y_t$, e a restri\c{c}\~ao de recursos \'e $C_t + [K_{t+1}-(1-\delta_k)K_t] + G^e_t = Y_t$. A calibra\c{c}\~ao (frequ\^encia anual) est\'a na Tabela~\ref{tab:dsgepar}.
+% AUTHOR WRITES
 
 \begin{table}[H]
 \centering
@@ -236,13 +205,14 @@ Nota: refer\^encia \`a literatura DSGE brasileira \citep{castro2015samba,cavalca
 \end{table}
 
 \subsection{M\'etodo de solu\c{c}\~ao}
-A transi\c{c}\~ao \'e resolvida por \emph{previs\~ao perfeita n\~ao linear} (\emph{stacked-time} / Newton): dado o caminho ex\'ogeno de $G^e_t$, calcula-se recursivamente $H_t$ por~\eqref{eq:lomh}; o sistema formado por~\eqref{eq:labor}, pela restri\c{c}\~ao de recursos e por~\eqref{eq:euler} \'e empilhado em $220$ per\'iodos e resolvido por Newton (Levenberg--Marquardt). Diferentemente da vers\~ao anterior, adota-se \emph{estado estacion\'ario terminal end\'ogeno}: para cortes permanentes, o EE terminal \'e o do novo n\'ivel de gasto (solu\c{c}\~ao fechada, Ap\^endice~\ref{ap:ss}), evitando o vi\'es de fixar o EE antigo. A solu\c{c}\~ao converge com res\'iduo m\'aximo da ordem de $10^{-15}$.
+% AUTHOR WRITES
 
 % =============================================================================
 \section{Resultados do DSGE: o preju\'izo de cortar educa\c{c}\~ao}\label{sec:resultados-dsge}
+% AUTHOR WRITES
 % =============================================================================
 \subsection{Fun\c{c}\~oes impulso-resposta}
-A Figura~\ref{fig:irf} apresenta as respostas a um corte de $1\%$ no gasto educacional em dois cen\'arios: transit\'orio (AR(1), $\rho_G=0{,}90$) e \emph{permanente}. No transit\'orio, todas as vari\'aveis caem e retornam gradualmente; no permanente, as perdas convergem para um novo estado estacion\'ario inferior -- o capital humano cai $0{,}30\%$ (exatamente $\phi\%$), arrastando produto ($-0{,}33\%$), sal\'arios e arrecada\c{c}\~ao. A Tabela~\ref{tab:irf} quantifica as perdas: o investimento \'e a vari\'avel de maior queda inicial (antecipa\c{c}\~ao da menor produtividade futura) e o consumo cai com defasagem (suaviza\c{c}\~ao intertemporal).
+% AUTHOR WRITES
 
 \begin{figure}[H]
 \centering
@@ -265,7 +235,7 @@ Nota: ``Perda acum.'' \'e a soma descontada (fator $0{,}96$) dos desvios no hori
 \end{table}
 
 \subsection{Escala do corte: de $1\%$ a $25\%$ e o teto de gasto}
-A Figura~\ref{fig:multi} e a Tabela~\ref{tab:cenarios} escalam o choque. As perdas de longo prazo crescem de forma quase proporcional \`a magnitude do corte: um corte de $10\%$ reduz o capital humano em $3{,}1\%$ e o produto em $3{,}4\%$; um corte de $25\%$, em $8{,}3\%$ e $9{,}1\%$, respectivamente. A Figura~\ref{fig:perdas} resume as perdas estruturais por magnitude. O cen\'ario de \emph{teto de gasto} (EC 95), em que o gasto educacional per capita \'e comprimido gradualmente at\'e $-10\%$ ao longo de oito anos, produz uma trajet\'oria de deteriora\c{c}\~ao mais lenta, por\'em igualmente permanente (Figura~\ref{fig:traj30}): a aus\^encia de um ``salto'' inicial mascara, no curto prazo, um dano estrutural que se acumula por d\'ecadas.
+% AUTHOR WRITES
 
 \begin{figure}[H]
 \centering
@@ -305,8 +275,8 @@ Nota: $\Delta X_{LP}$ \'e o desvio percentual de longo prazo (novo EE). Bem-esta
 
 % =============================================================================
 \section{Custo fiscal l\'iquido: o efeito Laffer din\^amico da educa\c{c}\~ao}\label{sec:laffer}
+% AUTHOR WRITES
 % =============================================================================
-Ancorando o modelo em um PIB de R\$ $10{,}9$ trilh\~oes, traduzem-se as perdas em reais. O ponto central \'e que o corte \emph{corr\'oi a pr\'opria base tribut\'aria}: a economia or\c{c}ament\'aria imediata ($-G^e$) \'e progressivamente revertida pela menor arrecada\c{c}\~ao futura ($T_t=\tau Y_t$). A Tabela~\ref{tab:fiscal} quantifica esse \emph{efeito Laffer din\^amico da educa\c{c}\~ao}. Para um corte de $10\%$, a economia acumulada em valor presente de 10 anos \'e de R\$ $457$ bilh\~oes, mas a perda de arrecada\c{c}\~ao j\'a consome $40\%$ desse valor; em 30 anos, a eros\~ao chega a $78\%$. A Figura~\ref{fig:fiscal} mostra que, considerando os fluxos n\~ao descontados, a perda acumulada de arrecada\c{c}\~ao \emph{ultrapassa} a economia or\c{c}ament\'aria por volta do ano~$33$ (\emph{break-even}): a partir da\'i, o corte \'e fiscalmente autodestrutivo. O painel direito da mesma figura compara, por magnitude, a economia e a perda em valor presente de 20 anos. Isso confirma \textbf{H4} e qualifica drasticamente a l\'ogica de austeridade: parcela substancial -- e crescente no tempo -- da ``economia'' \'e ilus\'oria.
 
 \begin{table}[H]
 \centering
@@ -335,8 +305,8 @@ Nota: valores presentes com fator de desconto $0{,}96$. ``\% erodido'' = perda d
 
 % =============================================================================
 \section{Bem-estar e multiplicadores}\label{sec:bemestar}
+% AUTHOR WRITES
 % =============================================================================
-Al\'em do custo fiscal, o corte imp\~oe custo de \emph{bem-estar}. A Tabela~\ref{tab:cenarios} reporta a varia\c{c}\~ao equivalente de consumo: um corte permanente de $1\%$ custa $0{,}08\%$ do consumo permanente; um de $25\%$, expressivos $2{,}4\%$. A Figura~\ref{fig:bemestar} (esq.) mostra a rela\c{c}\~ao crescente entre magnitude do corte e perda de bem-estar. O \emph{multiplicador acumulado} do gasto educacional sobre o produto -- raz\~ao entre os valores presentes de $\Delta Y$ e $\Delta G^e$ -- supera a unidade e cresce no horizonte (Figura~\ref{fig:bemestar}, dir.; Tabela~\ref{tab:mult}), atingindo $\approx 1{,}2$ em 10 anos e valores superiores em horizontes mais longos: cada real cortado em educa\c{c}\~ao subtrai \emph{mais de um real} de produto ao longo do tempo, porque o gasto \'e produtivo (constr\'oi capital humano), n\~ao mera transfer\^encia.
 
 \begin{figure}[H]
 \centering
@@ -360,8 +330,8 @@ Nota: multiplicador de impacto = $\Delta Y_0/\Delta G^e_0$; acumulado de $n$ ano
 
 % =============================================================================
 \section{Incid\^encia regional e desigualdade}\label{sec:regional}
+% AUTHOR WRITES
 % =============================================================================
-A etapa final articula macro e regi\~ao: combina-se a resposta salarial agregada do DSGE com as elasticidades regionais encolhidas (equa\c{c}\~ao~\ref{eq:eb}) para projetar a perda salarial por UF e seu efeito sobre a desigualdade. A Figura~\ref{fig:proj} e o mapa de calor da Figura~\ref{fig:mapa} mostram que o preju\'izo salarial concentra-se no Nordeste e no Norte, enquanto o Sudeste -- de elasticidade pr\'oxima de zero -- \'e quase imune. A Tabela~\ref{tab:proj} lista os estados mais afetados.
 
 \begin{figure}[H]
 \centering
@@ -383,8 +353,6 @@ A etapa final articula macro e regi\~ao: combina-se a resposta salarial agregada
 \label{fig:mapa}
 \fonte{Elabora\c{c}\~ao pr\'opria.}
 \end{figure}
-
-O resultado distributivo central est\'a na Figura~\ref{fig:gini} e na Tabela~\ref{tab:desig}: como o choque recai sobre as regi\~oes mais pobres, a desigualdade salarial \emph{entre} estados aumenta. O \'indice de Gini dos sal\'arios entre UF sobe de forma mon\'otona com a magnitude do corte -- $+0{,}5\%$ para $1\%$, $+6{,}1\%$ para $10\%$ e expressivos $+17{,}7\%$ para $25\%$ -- e a raz\~ao salarial Sudeste/Nordeste amplia-se de $1{,}65$ para at\'e $1{,}82$. A curva de Lorenz (Figura~\ref{fig:proj}, dir.) desloca-se para longe da diagonal. Confirma-se \textbf{H3} em sua forma forte: o corte n\~ao s\'o reduz agregados nacionais, mas \emph{aprofunda a desigualdade regional}, num mecanismo de \emph{feedback} perverso -- regi\~oes pobres sofrem maior perda salarial e de arrecada\c{c}\~ao, comprometendo sua capacidade futura de financiar a pr\'opria educa\c{c}\~ao.
 
 \begin{figure}[H]
 \centering
@@ -417,53 +385,36 @@ Nota: Gini e raz\~ao SE/NE dos sal\'arios m\'edios entre UF, ponderados pela pop
 
 % =============================================================================
 \section{Discuss\~ao}
+% AUTHOR WRITES
 % =============================================================================
-Os resultados articulam quatro n\'iveis de evid\^encia coerentes. No painel, a elasticidade sal\'ario-educa\c{c}\~ao \'e positiva, significativa e regionalmente heterog\^enea. No DSGE, o canal estrutural -- gasto p\'ublico $\to$ capital humano $\to$ produtividade $\to$ sal\'arios e arrecada\c{c}\~ao -- gera perdas persistentes, com multiplicador maior que a unidade e custo de bem-estar relevante. No plano fiscal, o corte corr\'oi a base tribut\'aria a ponto de tornar-se autodestrutivo em horizonte longo. Na proje\c{c}\~ao regional, o preju\'izo concentra-se nas regi\~oes mais pobres e amplia a desigualdade.
-
-A heterogeneidade regional dialoga com a literatura de multiplicadores fiscais regionais \citep{nakamurasteinsson2014,chodorowreich2019}: assim como o multiplicador local depende da estrutura da economia regional, a transmiss\~ao do gasto educacional aos sal\'arios depende da depend\^encia local da oferta p\'ublica de capital humano. Do ponto de vista de pol\'itica, regras fiscais uniformes -- como tetos de gasto que comprimem despesas educacionais -- t\^em efeitos \emph{n\~ao} uniformes: penalizam desproporcionalmente as regi\~oes mais vulner\'aveis e cobram um custo fiscal futuro que a contabilidade or\c{c}ament\'aria de curto prazo ignora.
 
 % =============================================================================
 \section{An\'alise de robustez}
+% AUTHOR WRITES
 % =============================================================================
-A robustez foi avaliada em quatro dimens\~oes. \emph{Primeira}, a infer\^encia: os resultados do painel mant\^em-se sob erros clusterizados, de Driscoll--Kraay e sob tend\^encia (Tabela~\ref{tab:fe}). \emph{Segunda}, a heterogeneidade: as elasticidades regionais ancoram o encolhimento emp\'irico-bayesiano, eliminando estimativas estaduais esp\'urias. \emph{Terceira}, o DSGE: o resultado qualitativo (perdas em todas as vari\'aveis) \'e invariante \`a persist\^encia $\rho_G$ e \`a magnitude do choque, e a escala das perdas de longo prazo \'e governada por $\phi$; a ado\c{c}\~ao de estado estacion\'ario terminal end\'ogeno corrige um vi\'es da solu\c{c}\~ao anterior. \emph{Quarta}, a coer\^encia interna: a solu\c{c}\~ao converge com res\'iduo desprez\'ivel e o EE satisfaz as raz\~oes macroecon\^omicas usuais ($K/Y\approx 1{,}9$ ao ano; $L_{ss}\approx 0{,}23$).
 
 % =============================================================================
 \section{Limita\c{c}\~oes e agenda emp\'irica definitiva}\label{sec:agenda}
+% AUTHOR WRITES
 % =============================================================================
-As limita\c{c}\~oes s\~ao expl\'icitas. \emph{(i)} A base \'e calibrada, n\~ao observada; a vers\~ao definitiva requer microdados (RAIS, CAGED, PNAD Cont\'inua) e s\'eries oficiais (SICONFI/FINBRA, SIOP, SIDRA). \emph{(ii)} O painel identifica associa\c{c}\~oes condicionais; a identifica\c{c}\~ao causal demanda pain\'eis din\^amicos GMM \citep{arellanobond1991}, IV ou desenhos quase-experimentais (\emph{event study} em torno da EC 95). \emph{(iii)} O gasto n\~ao distingue qualidade, n\'ivel de ensino, custeio e investimento. \emph{(iv)} O DSGE \'e calibrado; uma vers\~ao estrutural estimaria par\^ametros por m\'etodos bayesianos \citep{smetswouters2007,fvrr2016} e incorporaria rigidezes, heterogeneidade de agentes e bloco regional expl\'icito.
-
-
 
 % =============================================================================
 \section{Conclus\~ao}
+% AUTHOR WRITES
 % =============================================================================
-Este artigo integrou econometria de painel e um DSGE fiscal com capital humano para avaliar os efeitos do gasto p\'ublico em educa\c{c}\~ao sobre sal\'arios e din\^amica fiscal no Brasil. A evid\^encia de painel indica elasticidade sal\'ario-educa\c{c}\~ao positiva ($\approx 0{,}17$) e fortemente heterog\^enea, maior nas regi\~oes mais pobres. O modelo estrutural mostra que cortes no gasto educacional geram perdas persistentes e escal\'aveis de produto, sal\'arios e arrecada\c{c}\~ao; imp\~oem custo de bem-estar de at\'e $2{,}4\%$ do consumo; t\^em multiplicador maior que a unidade; e, sobretudo, \emph{corroem a pr\'opria base fiscal} a ponto de tornar-se autodestrutivos no longo prazo -- um efeito Laffer din\^amico da educa\c{c}\~ao.
-
-A principal contribui\c{c}\~ao substantiva \'e demonstrar que conten\c{c}\~oes em educa\c{c}\~ao s\~ao economicamente custosas e \emph{regressivas no espa\c{c}o}: o preju\'izo salarial recai sobre o Norte e o Nordeste, elevando o Gini salarial entre estados em at\'e $17{,}7\%$. A contribui\c{c}\~ao metodol\'ogica est\'a no arcabou\c{c}o reprodut\'ivel que integra painel, DSGE n\~ao linear com EE terminal end\'ogeno e proje\c{c}\~ao regional de desigualdade. O passo seguinte para publica\c{c}\~ao plena \'e substituir a base calibrada por microdados, refor\c{c}ar a identifica\c{c}\~ao causal e estimar o DSGE estruturalmente.
-
-% =============================================================================
-\section*{Declara\c{c}\~ao sobre uso de IA generativa}
-% =============================================================================
-Este documento foi organizado e redigido com aux\'ilio de IA generativa, a partir de c\'odigo, modelos, calibra\c{c}\~oes e instru\c{c}\~oes fornecidos pelo autor. A concep\c{c}\~ao do problema, a interpreta\c{c}\~ao final, a revis\~ao t\'ecnica, a valida\c{c}\~ao dos resultados e a responsabilidade cient\'ifica permanecem integralmente atribu\'idas ao autor.
 
 % =============================================================================
 \bibliography{referencias}
-% =============================================================================
-
 \appendix
-% =============================================================================
 \section{Deriva\c{c}\~ao das condi\c{c}\~oes de equil\'ibrio}\label{ap:deriv}
+% AUTHOR WRITES
 % =============================================================================
-O lagrangeano da fam\'ilia, com multiplicador $\Lambda_t$, gera as CPO em $C_t$, $L_t$ e $K_{t+1}$: $1/C_t = \Lambda_t$; $\theta/(1-L_t) = \Lambda_t(1-\tau)w_tH_t$; $\Lambda_t = \beta\Ee_t\Lambda_{t+1}[(1-\tau)r_{t+1}+1-\delta_k]$. Substituindo $\Lambda_t=1/C_t$ obt\^em-se~\eqref{eq:euler} e~\eqref{eq:labor}. Com $w_tH_t=(1-\alpha)Y_t/L_t$, a oferta de trabalho assume a forma operacional usada na solu\c{c}\~ao.
 
 \section{Estado estacion\'ario e EE terminal end\'ogeno}\label{ap:ss}
-No EE, a equa\c{c}\~ao de Euler implica $(1-\tau)\alpha Y/K = 1/\beta-1+\delta_k$, donde $K/Y=\alpha/\tilde{R}$ com $\tilde{R}=(1/\beta-1+\delta_k)/(1-\tau)$. Para um n\'ivel \emph{fixo} de gasto $G^e$ (usado como condi\c{c}\~ao terminal em cortes permanentes), o EE tem solu\c{c}\~ao fechada: $H = A(G^e)^\phi/\delta_h$; $Y=B\,H\,l$ com $B=(\alpha/\tilde{R})^{\alpha/(1-\alpha)}$; e, da oferta de trabalho e da restri\c{c}\~ao de recursos,
-\[
-l = \frac{(1-\tau)(1-\alpha)B\,H + \theta\,G^e}{B\,H\,[\theta(1-\delta_k K/Y) + (1-\tau)(1-\alpha)]}.
-\]
-Com a calibra\c{c}\~ao da Tabela~\ref{tab:dsgepar} e $G^e=G^e_{ss}$, recupera-se o EE base: $K/Y\approx 1{,}89$, $L_{ss}\approx 0{,}23$, $C/Y\approx 0{,}76$, $g_e=0{,}05$, $\tau=0{,}33$. Uma redu\c{c}\~ao permanente de $1\%$ em $G^e$ reduz $H$ em $\phi\%=0{,}30\%$ no novo EE.
+% AUTHOR WRITES
 
 \section{Elasticidades estaduais}\label{ap:elast}
+% AUTHOR WRITES
 \begin{table}[H]
 \centering
 \caption{Elasticidade sal\'ario-educa\c{c}\~ao por UF: bruta (\emph{bootstrap}) e encolhida (EB)}
@@ -474,6 +425,6 @@ Com a calibra\c{c}\~ao da Tabela~\ref{tab:dsgepar} e $G^e=G^e_{ss}$, recupera-se
 \end{table}
 
 \section{Reprodutibilidade}\label{ap:repro}
-O reposit\'orio cont\'em: \texttt{code/\_common.py} (constantes e utilit\'arios); \texttt{code/01\_empirical\_painel.py} (base calibrada, FE bidirecional, Driscoll--Kraay, Hausman, \emph{bootstrap} estadual, elasticidades regionais e encolhimento EB); \texttt{code/02\_dsge\_capital\_humano.py} (EE, solu\c{c}\~ao por previs\~ao perfeita n\~ao linear com EE terminal end\'ogeno, cen\'arios de corte, custo fiscal em R\$, bem-estar, multiplicadores, desigualdade regional). Portes equivalentes em R (RStudio) est\~ao em \texttt{code/03\_empirical\_painel.R} e \texttt{code/04\_dsge\_capital\_humano.R}, com coleta oficial via API ativ\'avel por \texttt{use\_api <- TRUE}. Todas as figuras (\texttt{paper/figures/}) e tabelas (\texttt{paper/tables/}) s\~ao geradas por esses roteiros; \texttt{run\_all.py} executa o pipeline completo.
+% AUTHOR WRITES
 
 \end{document}

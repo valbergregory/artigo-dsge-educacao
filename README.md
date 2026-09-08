@@ -2,11 +2,12 @@
 
 **Evidências em painel e um DSGE fiscal com capital humano.**
 
-Este repositório reúne o código, os dados calibrados, as figuras, as tabelas e o
-artigo (LaTeX/Overleaf) de um estudo que avalia o impacto do gasto público em
-educação sobre os salários médios estaduais e sobre a dinâmica fiscal no Brasil,
-com ênfase na **dimensão regional** e nos efeitos de **cortes/desinvestimentos**
-(por exemplo, a limitação de repasses a universidades e institutos federais).
+Este repositório reúne o código, os dados calibrados, as figuras, as tabelas e os
+**esqueletos LaTeX** dos artigos de um estudo que avalia o impacto do gasto
+público em educação sobre os salários médios estaduais e sobre a dinâmica fiscal
+no Brasil, com ênfase na **dimensão regional** e nos efeitos de
+**cortes/desinvestimentos** (por exemplo, a limitação de repasses a universidades
+e institutos federais).
 
 O trabalho combina:
 
@@ -20,39 +21,35 @@ O trabalho combina:
    **previsão perfeita não linear** (*stacked-time* Newton) com **estado
    estacionário terminal endógeno**.
 
-## Principais resultados
+## Resultados
 
-- Elasticidade salário-educação média de **0,17** (significativa a 1%), com forte
-  heterogeneidade regional (≈0,21 no Norte/Nordeste; ≈0 no Sudeste).
-- Um corte permanente de **10%** reduz o capital humano de longo prazo em **3,1%**
-  e o produto em **3,4%**.
-- **Efeito Laffer dinâmico da educação**: o corte corrói a base tributária; em
-  valor presente de 30 anos, até **78%** da economia orçamentária é revertida pela
-  perda de arrecadação (*break-even* fiscal por volta do ano 33).
-- Multiplicador acumulado do gasto educacional sobre o produto **> 1** (≈1,2).
-- Perda de bem-estar de até **2,4%** do consumo permanente (corte de 25%).
-- A austeridade educacional **amplia a desigualdade regional**: o Gini salarial
-  entre estados sobe até **+17,7%** e a razão Sudeste/Nordeste aumenta.
+Os resultados numéricos estão nas tabelas (`*/tables/*.tex`), nas figuras
+(`*/figures/*.png`) e nos arquivos intermediários de `out/` (CSV/JSON), todos
+gerados pelo código. A interpretação e a redação são do autor e não fazem parte
+deste repositório.
 
-## Artigos
+## Artigos (esqueletos)
 
-O material está organizado em **três formatos do mesmo trabalho**, para diferentes usos:
+O material está organizado em **três formatos do mesmo trabalho**. Cada pasta
+contém apenas o **esqueleto LaTeX**: preâmbulo, títulos de seção, tabelas e
+figuras geradas pelo código e bibliografia. A prosa é redigida pelo autor nos
+pontos marcados com `% AUTHOR WRITES`.
 
 | Pasta | Conteúdo | Uso |
 |---|---|---|
-| `paper/` | **Artigo integrado** (26 pág.): painel + DSGE + custo fiscal + desigualdade. | Versão completa, referência. |
-| `anpec/` | Versão **ANPEC** condensada (20 pág., Times 12, A4), nas variantes `main_full` (identificada) e `main_blind` (avaliação às cegas). | Submissão ao ANPEC. |
+| `paper/` | **Artigo integrado**: painel + DSGE + custo fiscal + desigualdade. | Versão completa, referência. |
+| `anpec/` | Versão **ANPEC** (Times 12, A4), nas variantes `main_full` (identificada) e `main_blind` (avaliação às cegas). | Submissão ao ANPEC. |
 | `paperA/` | **Paper A — "A austeridade educacional se autofinancia?"**: DSGE fiscal, cenários de corte, efeito Laffer, multiplicador, bem-estar. | Periódico (Setor Público/Macro). |
 | `paperB/` | **Paper B — "Cortes em educação e desigualdade regional"**: painel, heterogeneidade, projeção regional, Gini/Lorenz/Theil. | Periódico (Economia Regional). |
 
-Cada paper traz também uma versão **`main_guiado.tex`/`.pdf`** com caixas de orientação (o que escrever/expandir em cada seção); remova-as antes de submeter (`\renewcommand{\guia}[1]{}`).
+PDFs e DOCX não são versionados (`.gitignore`); gere-os localmente ou no Overleaf.
 
 ## Estrutura do repositório
 
 ```
 .
 ├── README.md
-├── LICENSE                   # MIT (código) + CC-BY 4.0 (texto)
+├── LICENSE                   # MIT (código) + CC-BY 4.0 (figuras e tabelas)
 ├── requirements.txt          # dependências Python
 ├── run_all.py                # executa o pipeline Python completo (01 → 02 → 05)
 ├── code/
@@ -64,7 +61,7 @@ Cada paper traz também uma versão **`main_guiado.tex`/`.pdf`** com caixas de o
 │   ├── 04_dsge_capital_humano.R  # porte R do bloco DSGE (RStudio)
 │   └── script_original.R         # versão R original com coleta via API (legado)
 ├── paper/  anpec/  paperA/  paperB/   # ver seção "Artigos" acima
-│   ├── main.tex / referencias.bib
+│   ├── main*.tex / referencias.bib   # esqueletos LaTeX
 │   ├── figures/              # figuras (.png) geradas pelo código
 │   └── tables/               # tabelas (.tex) geradas pelo código
 └── out/                      # CSVs/JSON intermediários (regerados)
@@ -95,9 +92,9 @@ são instalados automaticamente.
 
 ## Dados oficiais via API (Governo Federal)
 
-Por padrão o código usa uma **base calibrada** realista (declarada abertamente no
-artigo), para reprodutibilidade imediata. Para coletar séries **oficiais**,
-defina `use_api <- TRUE` em `code/03_empirical_painel.R` (ou consulte
+Por padrão o código usa uma **base calibrada** (declarada como tal), para
+reprodutibilidade imediata. Para coletar séries **oficiais**, defina
+`use_api <- TRUE` em `code/03_empirical_painel.R` (ou consulte
 `script_original.R`). As fontes previstas:
 
 | Variável | Fonte | Acesso |
@@ -117,7 +114,7 @@ Todos os valores monetários são **deflacionados pelo IPCA** para preços const
 - Governo com orçamento equilibrado e tributação distorciva; arrecadação
   `T = τY`.
 - Solução por previsão perfeita não linear com EE terminal endógeno (solução
-  fechada para nível fixo de gasto — ver apêndice do artigo).
+  fechada para nível fixo de gasto — ver `code/02_dsge_capital_humano.py`).
 
 ## Como citar
 
@@ -127,7 +124,9 @@ Todos os valores monetários são **deflacionados pelo IPCA** para preços const
 
 ## Licença e uso de IA
 
-Código sob **licença MIT**; texto dos artigos, figuras e tabelas sob **CC-BY 4.0**
-(ver `LICENSE`). O artigo foi organizado com auxílio de IA generativa a partir de
-código, modelos e instruções do autor; a concepção, a validação e a
-responsabilidade científica são integralmente do autor.
+Código sob **licença MIT**; figuras e tabelas sob **CC-BY 4.0** (ver `LICENSE`).
+Os arquivos `main*.tex` contêm apenas estrutura, tabelas e figuras; a prosa dos
+artigos é redigida integralmente pelo autor fora deste repositório. Ferramentas
+de IA generativa foram usadas na organização do código e do repositório; a
+declaração de uso de IA exigida por cada revista será redigida pelo autor no
+momento da submissão.
