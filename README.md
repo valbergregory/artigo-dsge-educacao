@@ -124,6 +124,8 @@ Todos os valores monetários são **deflacionados pelo IPCA** para preços const
 
 ## Licença e uso de IA
 
+Code: MIT ([LICENSE](LICENSE)). Text, documentation and data: see [LICENSING.md](LICENSING.md).
+
 Código sob **licença MIT**; figuras e tabelas sob **CC-BY 4.0** (ver `LICENSE`).
 Os arquivos `main*.tex` contêm apenas estrutura, tabelas e figuras; a prosa dos
 artigos é redigida integralmente pelo autor fora deste repositório. Ferramentas
