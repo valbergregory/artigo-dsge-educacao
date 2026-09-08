@@ -100,4 +100,6 @@ Todos os valores monetários são **deflacionados pelo IPCA** para preços const
 > Humano*. Repositório: https://github.com/valbergregory/artigo-dsge-educacao
 
 ## Licença
+Code: MIT ([LICENSE](LICENSE)). Text, documentation and data: see [LICENSING.md](LICENSING.md).
+
 Código sob **licença MIT**; figuras e tabelas sob **CC-BY 4.0** (ver `LICENSE`).
