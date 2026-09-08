@@ -9,7 +9,9 @@ venv/
 .RData
 .Rproj.user/
 
-# LaTeX intermediários (mantém .tex, .bib, .pdf, .docx, figures/, tables/)
+# LaTeX: versiona-se só .tex, .bib, figures/ e tables/ (PDF/DOCX são regeráveis)
+*.pdf
+*.docx
 *.aux
 *.log
 *.out

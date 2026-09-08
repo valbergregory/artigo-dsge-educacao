@@ -2,10 +2,11 @@
 
 **Evidências em painel e um DSGE fiscal com capital humano.**
 
-Este repositório reúne o código, os dados calibrados, as figuras, as tabelas e o
-educação sobre os salários médios estaduais e sobre a dinâmica fiscal no Brasil,
-com ênfase na **dimensão regional** e nos efeitos de **cortes/desinvestimentos**
-(por exemplo, a limitação de repasses a universidades e institutos federais).
+Este repositório reúne o código, os dados calibrados, as figuras, as tabelas e os
+público em educação sobre os salários médios estaduais e sobre a dinâmica fiscal
+no Brasil, com ênfase na **dimensão regional** e nos efeitos de
+**cortes/desinvestimentos** (por exemplo, a limitação de repasses a universidades
+e institutos federais).
 
 O trabalho combina:
 
@@ -19,28 +20,17 @@ O trabalho combina:
    **previsão perfeita não linear** (*stacked-time* Newton) com **estado
    estacionário terminal endógeno**.
 
-## Principais resultados
+## Resultados
 
-- Elasticidade salário-educação média de **0,17** (significativa a 1%), com forte
-  heterogeneidade regional (≈0,21 no Norte/Nordeste; ≈0 no Sudeste).
-- Um corte permanente de **10%** reduz o capital humano de longo prazo em **3,1%**
-  e o produto em **3,4%**.
-- **Efeito Laffer dinâmico da educação**: o corte corrói a base tributária; em
-  valor presente de 30 anos, até **78%** da economia orçamentária é revertida pela
-  perda de arrecadação (*break-even* fiscal por volta do ano 33).
-- Multiplicador acumulado do gasto educacional sobre o produto **> 1** (≈1,2).
-- Perda de bem-estar de até **2,4%** do consumo permanente (corte de 25%).
-- A austeridade educacional **amplia a desigualdade regional**: o Gini salarial
-  entre estados sobe até **+17,7%** e a razão Sudeste/Nordeste aumenta.
-
-## Artigos
+Os resultados numéricos estão nos arquivos intermediários de `out/` (CSV/JSON),
+gerados pelo código.
 
 ## Estrutura do repositório
 
 ```
 .
 ├── README.md
-├── LICENSE                   # MIT (código) + CC-BY 4.0 (texto)
+├── LICENSE                   # MIT (código) + CC-BY 4.0 (figuras e tabelas)
 ├── requirements.txt          # dependências Python
 ├── run_all.py                # executa o pipeline Python completo (01 → 02 → 05)
 ├── code/
@@ -79,9 +69,9 @@ são instalados automaticamente.
 
 ## Dados oficiais via API (Governo Federal)
 
-Por padrão o código usa uma **base calibrada** realista (declarada abertamente no
-artigo), para reprodutibilidade imediata. Para coletar séries **oficiais**,
-defina `use_api <- TRUE` em `code/03_empirical_painel.R` (ou consulte
+Por padrão o código usa uma **base calibrada** (declarada como tal), para
+reprodutibilidade imediata. Para coletar séries **oficiais**, defina
+`use_api <- TRUE` em `code/03_empirical_painel.R` (ou consulte
 `script_original.R`). As fontes previstas:
 
 | Variável | Fonte | Acesso |
@@ -101,7 +91,7 @@ Todos os valores monetários são **deflacionados pelo IPCA** para preços const
 - Governo com orçamento equilibrado e tributação distorciva; arrecadação
   `T = τY`.
 - Solução por previsão perfeita não linear com EE terminal endógeno (solução
-  fechada para nível fixo de gasto — ver apêndice do artigo).
+  fechada para nível fixo de gasto — ver `code/02_dsge_capital_humano.py`).
 
 ## Como citar
 
@@ -110,6 +100,4 @@ Todos os valores monetários são **deflacionados pelo IPCA** para preços const
 > Humano*. Repositório: https://github.com/valbergregory/artigo-dsge-educacao
 
 ## Licença
-Código sob **licença MIT**; texto dos artigos, figuras e tabelas sob **CC-BY 4.0**
-código, modelos e instruções do autor; a concepção, a validação e a
-responsabilidade científica são integralmente do autor.
+Código sob **licença MIT**; figuras e tabelas sob **CC-BY 4.0** (ver `LICENSE`).
